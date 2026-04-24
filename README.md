@@ -1,4 +1,4 @@
-# 🚂 Steamroller
+#  Steamroller
 
 <div align="center">
 
