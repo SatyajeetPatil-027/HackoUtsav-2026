@@ -1,0 +1,51 @@
+FFmpeg Installation Guide
+
+--------------------------------------------------
+Step 1: Download FFmpeg
+--------------------------------------------------
+Go to:
+https://www.gyan.dev/ffmpeg/builds/
+
+Download:
+ffmpeg-release-essentials.zip
+
+--------------------------------------------------
+Step 2: Extract
+--------------------------------------------------
+Extract the zip file to:
+C:\ffmpeg
+
+After extraction, you should have:
+C:\ffmpeg\bin\ffmpeg.exe
+
+--------------------------------------------------
+Step 3: Add FFmpeg to PATH (VERY IMPORTANT)
+--------------------------------------------------
+1. Press Win + R
+2. Type: sysdm.cpl
+3. Go to Advanced tab
+4. Click Environment Variables
+
+Under "System Variables":
+5. Find "Path"
+6. Click Edit
+7. Click New
+8. Add this path:
+C:\ffmpeg\bin
+
+9. Click OK → OK → OK
+
+Restart VS Code / Terminal
+
+--------------------------------------------------
+Step 4: Verify Installation
+--------------------------------------------------
+Open new terminal and run:
+
+ffmpeg -version
+
+If version details appear → Installation Successful ✅
+
+--------------------------------------------------
+End of File
+--------------------------------------------------
