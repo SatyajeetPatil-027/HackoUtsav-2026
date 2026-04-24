@@ -1,0 +1,72 @@
+Python Virtual Environment & Library Setup
+
+--------------------------------------------------
+Step 1: Open Project in VS Code
+--------------------------------------------------
+- Open VS Code
+- File → Open Folder
+- Select your project folder
+  (e.g. E:\mega project\codes)
+
+--------------------------------------------------
+Step 2: Open Terminal
+--------------------------------------------------
+- Press Ctrl + `
+OR
+- Terminal → New Terminal
+
+Ensure terminal path is your project folder
+
+--------------------------------------------------
+Step 3: Create Virtual Environment
+--------------------------------------------------
+Run:
+
+python -m venv venv
+
+This creates a folder named "venv"
+
+--------------------------------------------------
+Step 4: Activate Virtual Environment
+--------------------------------------------------
+PowerShell:
+.\venv\Scripts\Activate
+
+CMD:
+venv\Scripts\activate
+
+--------------------------------------------------
+Step 5: Confirm Activation
+--------------------------------------------------
+You should see:
+
+(venv) PS path>
+
+If (venv) appears → Environment is active ✅
+
+--------------------------------------------------
+Step 6: Install Required Libraries
+--------------------------------------------------
+Run:
+
+pip install -r requirements.txt
+
+(OR manually:)
+pip install openai-whisper
+pip install torch
+
+--------------------------------------------------
+Step 7: Run the Project
+--------------------------------------------------
+python file_name.py
+
+--------------------------------------------------
+Notes
+--------------------------------------------------
+- Make sure FFmpeg is installed before running
+- Keep audio files in correct folder
+- Output will be saved automatically
+
+--------------------------------------------------
+End of File
+--------------------------------------------------
