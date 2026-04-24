@@ -181,16 +181,6 @@ The pipeline defaults to the `tiny` model for speed. For better accuracy (with s
 model = whisper.load_model("base")  # Options: "tiny", "base", "small", "medium", "large"
 ```
 
-### Model Performance Comparison
-| Model | Relative Speed | Accuracy |
-|-------|----------------|----------|
-| tiny | 🟢 Fastest | Lower |
-| base | 🟡 Fast | Medium |
-| small | 🟠 Moderate | Good |
-| medium | 🔴 Slow | Very Good |
-| large | 🔴🔴 Very Slow | Excellent |
-
----
 
 ## 📝 Notes
 
