@@ -293,13 +293,13 @@ Input:  Raw speech from mic or .wav file
 | Satyajeet Patil | Master Agent & Voice Clone — `master_agent.py`, `tts_engine.py` |
 | Aditya Suryakar | Streamlit UI — `app.py` |
 
----
+----
 
 ## 📄 License
 
 Built for **HackoUtsav-2026** · 24-hour hackathon. All rights reserved by Team Steamroller.
 
----
+----
 
 <div align="center">
 
