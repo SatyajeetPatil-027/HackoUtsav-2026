@@ -1,0 +1,105 @@
+Complete Project Setup Guide (Updated)
+
+--------------------------------------------------
+1. FFmpeg Installation
+--------------------------------------------------
+
+Step 1: Download FFmpeg
+Go to: https://www.gyan.dev/ffmpeg/builds/
+Download: ffmpeg-release-essentials.zip
+
+Step 2: Extract
+Extract to: C:\ffmpeg
+Ensure path exists: C:\ffmpeg\bin\ffmpeg.exe
+
+Step 3: Add FFmpeg to PATH
+Press Win + R
+Type: sysdm.cpl
+Go to Advanced → Environment Variables
+
+Under System Variables:
+Find "Path" → Edit → New
+Add: C:\ffmpeg\bin
+
+Click OK → OK → OK
+Restart VS Code / Terminal
+
+Step 4: Verify Installation
+Run: ffmpeg -version
+If version appears → Installation Successful
+
+--------------------------------------------------
+2. Dependency File Setup (ffmpeg_setup.txt)
+--------------------------------------------------
+
+Create or update file: ffmpeg_setup.txt
+
+Add:
+
+streamlit>=1.32.0
+openai-whisper>=20231117
+torch>=2.0.0
+torchaudio>=2.0.0
+sounddevice>=0.4.6
+scipy>=1.11.0
+numpy>=1.24.0
+anthropic>=0.25.0
+gtts>=2.5.0
+pyttsx3>=2.90
+
+Save in project root folder
+
+--------------------------------------------------
+3. Python Virtual Environment Setup
+--------------------------------------------------
+
+Step 1: Open Project
+Open VS Code → File → Open Folder
+
+Step 2: Open Terminal
+Press Ctrl + `
+Ensure terminal path is project folder
+
+Step 3: Create Virtual Environment
+python -m venv venv
+
+Step 4: Activate Virtual Environment
+
+PowerShell:
+.\venv\Scripts\Activate
+
+CMD:
+venv\Scripts\activate
+
+Step 5: Confirm Activation
+(venv) should appear in terminal
+
+--------------------------------------------------
+4. Install Dependencies
+--------------------------------------------------
+
+Run:
+pip install -r ffmpeg_setup.txt
+
+--------------------------------------------------
+5. Run Project
+--------------------------------------------------
+
+For Python:
+python file_name.py
+
+For Streamlit:
+streamlit run app.py
+
+--------------------------------------------------
+Notes
+--------------------------------------------------
+
+- Install FFmpeg before running project
+- Always activate venv before running
+- Restart terminal after PATH setup
+- ffmpeg_setup.txt is used as dependency file
+
+--------------------------------------------------
+End of File
+--------------------------------------------------
