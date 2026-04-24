@@ -1,40 +1,36 @@
 import os
 import re
+import nltk
 
-# Input and Output folders
-input_folder = r"D:\HackoUtsav-2026\transcripts"
-output_folder = r"D:\HackoUtsav-2026\tokens"
+nltk.download("punkt", quiet=True)
+
+# Base directory
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+input_folder = os.path.join(base_dir, "transcripts")
+output_folder = os.path.join(base_dir, "tokens")
 
 os.makedirs(output_folder, exist_ok=True)
 
-# Get all .txt transcript files
-txt_files = [f for f in os.listdir(input_folder) if f.endswith(".txt")]
-
 def clean_stutter(text):
-    # remove filler words
     text = re.sub(r"\b(uh|um|ah|er)\b", "", text, flags=re.IGNORECASE)
-
-    # remove repeated words
     text = re.sub(r"\b(\w+)( \1\b)+", r"\1", text)
-
-    # remove repeated syllables like pa-pa
     text = re.sub(r"(\w+)-\1", r"\1", text)
-
     return text.strip()
 
-for file in txt_files:
+txt_files = [f for f in os.listdir(input_folder) if f.endswith(".txt")]
 
+for file in txt_files:
     input_path = os.path.join(input_folder, file)
 
     with open(input_path, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+        text = f.read()
 
-    cleaned_tokens = []
+    # 🔹 Step 1: Clean text
+    cleaned_text = clean_stutter(text)
 
-    for line in lines:
-        clean_line = clean_stutter(line)
-        tokens = clean_line.split()
-        cleaned_tokens.append(" ".join(tokens))
+    # 🔹 Step 2: Sentence tokenization
+    sentences = nltk.sent_tokenize(cleaned_text)
 
     output_file = os.path.join(
         output_folder,
@@ -42,9 +38,9 @@ for file in txt_files:
     )
 
     with open(output_file, "w", encoding="utf-8") as f:
-        for line in cleaned_tokens:
-            f.write(line + "\n")
+        for sentence in sentences:
+            f.write(sentence.strip() + "\n")
 
-    print(f"Processed NLP tokens saved: {output_file}")
+    print(f"Processed: {output_file}")
 
 print("NLP processing completed ✅")
